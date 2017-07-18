@@ -23,10 +23,17 @@ public class LoginPage extends Page {
         return new DashboardPage(driver);
     }
 
-    private void tryLogIn(String login, String password) {
+    public void tryLogIn(String login, String password) {
         insertText(login, By.id("user_login"));
         insertText(password, By.id("user_pass"));
         click(By.id("wp-submit"));
     }
 
+    public boolean isOpen() {
+        return driver.findElement(By.id("user_login")).isDisplayed();
+    }
+
+    public boolean isLoginErrorDisplayed() {
+        return driver.findElement(By.id("login_error")).isDisplayed();
+    }
 }

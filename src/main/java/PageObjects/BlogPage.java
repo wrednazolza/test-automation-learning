@@ -13,4 +13,8 @@ public class BlogPage extends Page {
     public boolean isPostPublished(String title) {
         return driver.getPageSource().contains(title);
     }
+
+    public boolean isPagePublished(String title) {
+        return driver.getPageSource().contains(title);
+    }
 }

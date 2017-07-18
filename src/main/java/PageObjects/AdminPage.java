@@ -23,4 +23,9 @@ public abstract class AdminPage extends Page{
         action.moveToElement(driver.findElement(By.linkText("Log Out"))).click().build().perform();
         return new LoginPage(driver);
     }
+
+    public PagesListPage goToPagesListPage() {
+        click(By.linkText("Pages"));
+        return new PagesListPage(driver);
+    }
 }

@@ -19,4 +19,14 @@ public class LoginTest extends SeleniumTest {
 
         assertTrue(dp.isOpen());
     }
+
+    @Test
+    public void shouldNotBePossibleToLogInWithWrongCredentials() {
+        LoginPage lp = new LoginPage(driver);
+        lp.open();
+        lp.tryLogIn("blednylogin", "blednehaslo");
+
+        assertTrue(lp.isOpen());
+        assertTrue(lp.isLoginErrorDisplayed());
+    }
 }
